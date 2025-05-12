@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import {Routes, Route} from "react-router"
 function App() {
   const [count, setCount] = useState(0)
 
@@ -29,7 +29,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-	  <Route path="pages/Home.jsx" element = {<Home />}
+	  <Route path="pages/Home.jsx" element = {<Home />} />
 	  </Routes>
     </>
   )
