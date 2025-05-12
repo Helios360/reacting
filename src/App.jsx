@@ -10,7 +10,7 @@ function App() {
   return (
     <>
 	  <Routes>
-	  <Route path="pages/Home.jsx" element = {<Home />} />
+	  <Route path="/" element = {<Home />} />
 	  </Routes>
     </>
   )
