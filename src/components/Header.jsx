@@ -3,13 +3,10 @@ import { NavLink, Link, useMatch} from 'react-router';
 import './Header.css';
 
 export default function Header() {
-	const matchVetements = useMatch('/vetements');
-	const matchChaussures = useMatch('/chaussures');
-
-	let categorie = null;
-	if (matchVetements) categorie = 'Vêtements';
-	else if (matchChaussures) categorie = 'Chaussures';
-
+	
+	const matchCategory = useMatch('/category/:categoryId');
+	const categorie = matchCategory?.params.categoryId;
+	
 	return (
 		<Navbar bg="light" expand="lg">
 			<Container>
@@ -19,8 +16,8 @@ export default function Header() {
 					<Nav className="ms-auto">
 						//remplace NavLing par Link pour la *5*
 						<Nav.Link as={NavLink} to="/">Accueil</Nav.Link>
-						<Nav.Link as={NavLink} to="/vetements">Vêtements</Nav.Link>
-						<Nav.Link as={NavLink} to="/chaussures">Chaussures</Nav.Link>
+						<Nav.Link as={NavLink} to="/category/vetements">Vêtements</Nav.Link>
+						<Nav.Link as={NavLink} to="/category/chaussures">Chaussures</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
